@@ -1,0 +1,61 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ep <ep@student.42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/11/10 11:10:25 by erpascua          #+#    #+#              #
+#    Updated: 2026/01/13 17:52:36 by ep               ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+.SILENT:
+
+################################################################################
+#																			   #
+#									VARIABLES								   #
+#																			   #
+################################################################################
+
+NAME =	bsp
+
+SRCS =	srcs/main.cpp \
+		srcs/Fixed.cpp \
+		srcs/Point.cpp \
+		srcs/bsp.cpp
+
+OBJ_DIR = obj
+OBJ = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
+
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -I./includes -std=c++98 -g
+
+################################################################################
+#																			   #
+#									  RULES									   #
+#																			   #
+################################################################################
+
+
+all: $(NAME)
+
+$(NAME): $(OBJ) $(LIBFT)
+	@$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
+	@echo "✅  $@ compiled !"
+
+$(OBJ_DIR)/%.o: %.cpp
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	@rm -rf $(OBJ_DIR)
+	@echo "✅  Object files removed"
+
+fclean: clean
+	@rm -f $(NAME)
+	@echo "✅  Executable and libraries removed"
+
+re: fclean all
+
+.PHONY: all clean fclean re
