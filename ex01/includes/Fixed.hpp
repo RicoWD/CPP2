@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ep <ep@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: erpascua <erpascua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 17:57:12 by ep                #+#    #+#             */
-/*   Updated: 2026/01/13 20:53:10 by ep               ###   ########.fr       */
+/*   Updated: 2026/01/14 16:35:02 by erpascua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,4 @@ class Fixed
         static const int _nbFractionalBits = 8;
 };
 
-std::ostream &operator<<(std::ostream &out, const Fixed &value);
+std::ostream& operator<<(std::ostream& os, const Fixed &rhs);

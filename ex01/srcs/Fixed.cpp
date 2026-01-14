@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ep <ep@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: erpascua <erpascua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 19:40:35 by ep                #+#    #+#             */
-/*   Updated: 2026/01/13 20:47:48 by ep               ###   ########.fr       */
+/*   Updated: 2026/01/14 19:27:29 by erpascua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath>
 
-/* ************************************************************************** */																			   #
+/* ************************************************************************** */
 // 																			  //
 // 						   ORTHODOX CANONICAL FORM							  //
 //																	 		  //
@@ -46,7 +47,7 @@ Fixed::Fixed(const int intToConvert)
 Fixed::Fixed(const float floatToConvert)
 {
 	std::cout	<< "Float constructor called\n";
-	_fixedPointNbValue = static_cast<int>(roundf(floatToConvert * (1 << Fixed::_nbFractionalBits)));
+	_fixedPointNbValue = static_cast<int>(roundf(floatToConvert * (1 << _nbFractionalBits)));
 }
 
 Fixed::~Fixed()
@@ -54,7 +55,7 @@ Fixed::~Fixed()
 	std::cout	<< "Destructor called\n";
 }
 
-/* ************************************************************************** */																			   #
+/* ************************************************************************** */
 // 																			  //
 // 									GET/SETERS								  //
 //																	 		  //
@@ -73,7 +74,7 @@ void	Fixed::setRawBits(int const raw)
 }
 
 
-/* ************************************************************************** */																			   #
+/* ************************************************************************** */
 // 																			  //
 // 								MEMBER FUNCTION								  //
 //																	 		  //
@@ -89,7 +90,7 @@ int		Fixed::toInt(void) const
 	return _fixedPointNbValue >> _nbFractionalBits;
 }
 
-/* ************************************************************************** */																			   #
+/* ************************************************************************** */
 // 																			  //
 // 							  EXTERNAL FUNCTIONS							  //
 //																	 		  //
