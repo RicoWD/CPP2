@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ep <ep@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: erpascua <erpascua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:58:11 by erpascua          #+#    #+#             */
-/*   Updated: 2026/01/20 02:47:57 by ep               ###   ########.fr       */
+/*   Updated: 2026/01/20 13:04:40 by erpascua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,10 +205,8 @@ Fixed Fixed::operator--(int)
 //																	 		  //
 /* ************************************************************************** */
 
-Fixed& Fixed::min(Fixed& lhs, Fixed& rhs)
-{
-	return lhs < rhs ? lhs : rhs;
-}
+Fixed& Fixed::min(Fixed& lhs, Fixed& rhs){
+	return lhs < rhs ? lhs : rhs;}
 
 const Fixed& Fixed::min(const Fixed& lhs, const Fixed& rhs)
 {
