@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ep <ep@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: erpascua <erpascua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 02:56:56 by ep                #+#    #+#             */
-/*   Updated: 2026/01/20 04:24:00 by ep               ###   ########.fr       */
+/*   Updated: 2026/01/20 14:22:25 by erpascua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,34 @@ Point::Point() : _x(0), _y(0)
 Point::Point(float nX, float nY) : _x(nX), _y(nY)
 {
 }
+
+Point::Point(const Point& cpy) : _x(cpy._x), _y(cpy._y)
+{
+}
+
+Point& Point::operator=(const Point& old)
+{
+	static_cast<void>(old);
+	return (*this);
+}
+
+Point::~Point()
+{
+}
+
+/* ************************************************************************** */
+// 																			  //
+// 						   				GET									  //
+//																	 		  //
+/* ************************************************************************** */
+
+Fixed Point::getX()
+{
+	return (this->_x);
+}
+
+Fixed Point::getY()
+{
+	return (this->_y);
+}
+

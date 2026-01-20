@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ep <ep@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: erpascua <erpascua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 02:51:24 by ep                #+#    #+#             */
-/*   Updated: 2026/01/20 03:04:34 by ep               ###   ########.fr       */
+/*   Updated: 2026/01/20 18:59:18 by erpascua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,16 @@ class Point
 		Fixed const _y;
 
 	public:
+		// Orthodox Canocical Form 
 		Point();
-		Point(float nX, float nY);
-		Point(const Point& other);
-		Point& operator=(const Point& rhs) = delete;
+		Point(const float nX, const float nY);
+		Point(const Point& cpy);
+		Point& operator=(const Point& old);
 		~Point();
+
+		// Get
+		Fixed getX(void);
+		Fixed getY(void); 
 };
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
