@@ -6,11 +6,11 @@
 /*   By: ep <ep@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 18:01:19 by ep                #+#    #+#             */
-/*   Updated: 2026/01/13 19:09:20 by ep               ###   ########.fr       */
+/*   Updated: 2026/01/20 02:44:10 by ep               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../includes/Fixed.hpp"
 
 // MAIN FUNCTION GIVEN BY SUBJECT
 

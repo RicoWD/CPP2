@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erpascua <erpascua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ep <ep@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 17:57:12 by ep                #+#    #+#             */
-/*   Updated: 2026/01/15 18:20:47 by erpascua         ###   ########.fr       */
+/*   Updated: 2026/01/20 02:46:25 by ep               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ class Fixed
 		Fixed operator++(int n);
 		Fixed& operator--();
 		Fixed operator--(int n);
-
 
 		// Overload member functions
 		static Fixed& min(Fixed& lhs, Fixed& rhs);
