@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ep <ep@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: erpascua <erpascua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 17:55:51 by ep                #+#    #+#             */
-/*   Updated: 2026/01/13 18:50:57 by ep               ###   ########.fr       */
+/*   Updated: 2026/01/21 14:17:00 by erpascua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ class Fixed
 	private:
 		int					_fixedPointNbValue;
 		const static int	_nbFractionalBits = 8;
-
 };
