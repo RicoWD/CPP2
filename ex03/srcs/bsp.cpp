@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erpascua <erpascua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ep <ep@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 15:48:20 by erpascua          #+#    #+#             */
-/*   Updated: 2026/01/20 20:00:40 by erpascua         ###   ########.fr       */
+/*   Updated: 2026/01/21 05:14:09 by ep               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,15 @@
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
-	Fixed abc = (b.getX() - a.getX()) * (c.getY() - a.getY()) - (c.getX() - a.getX) * (b.getY() - a.getY());
-	Fixed pab = (a.getX() - p.getX()) * (b.getY() - p.getY()) - (b.getX() - p.getX) * (a.getY() - p.getY());
-	Fixed pbc = (b.getX() - p.getX()) * (c.getY() - p.getY()) - (c.getX() - p.getX) * (b.getY() - p.getY());
-	Fixed pca = (b.getX() - p.getX()) * (c.getY() - p.getY()) - (c.getX() - p.getX) * (b.getY() - p.getY());
+	Fixed abc = (b.getX() - a.getX()) * (c.getY() - a.getY()) - (c.getX() - a.getX()) * (b.getY() - a.getY());
+	Fixed pab = (a.getX() - point.getX()) * (b.getY() - point.getY()) - (b.getX() - point.getX()) * (a.getY() - point.getY());
+	Fixed pbc = (b.getX() - point.getX()) * (c.getY() - point.getY()) - (c.getX() - point.getX()) * (b.getY() - point.getY());
+	Fixed pca = (c.getX() - point.getX()) * (a.getY() - point.getY()) - (a.getX() - point.getX()) * (c.getY() - point.getY());
 	
-	std::cout	<< "ABC = "	<< abc << "\n"
-				<< "PAB = " << pab << "\n"
-				<< "PBC = " << pbc << "\n"
-				<< "PCA = " << pca << "\n";
+	if (pab == 0 || pbc == 0 || pca == 0)
+		return false;
 	
-	
-
-	return (true);
+	bool sameSignPos = (abc > 0 && pab > 0 && pbc > 0 && pca > 0);
+	bool sameSignNeg = (abc < 0 && pab < 0 && pbc < 0 && pca < 0);
+	return sameSignPos || sameSignNeg;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erpascua <erpascua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ep <ep@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 02:51:24 by ep                #+#    #+#             */
-/*   Updated: 2026/01/20 18:59:18 by erpascua         ###   ########.fr       */
+/*   Updated: 2026/01/21 05:00:22 by ep               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ class Point
 		~Point();
 
 		// Get
-		Fixed getX(void);
-		Fixed getY(void); 
+		Fixed getX(void) const;
+		Fixed getY(void) const; 
 };
 
 bool bsp( Point const a, Point const b, Point const c, Point const point);
