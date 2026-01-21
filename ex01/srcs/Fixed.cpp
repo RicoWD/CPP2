@@ -6,7 +6,7 @@
 /*   By: erpascua <erpascua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 19:40:35 by ep                #+#    #+#             */
-/*   Updated: 2026/01/21 14:18:20 by erpascua         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:49:41 by erpascua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ Fixed &Fixed::operator=(const Fixed &other)
 Fixed::Fixed(const int intToConvert)
 {
 	std::cout	<< "Int constructor called\n";
-	_fixedPointNbValue = intToConvert << Fixed::_nbFractionalBits;
+	_fixedPointNbValue = intToConvert << _nbFractionalBits;
 }
 
 Fixed::Fixed(const float floatToConvert)
 {
 	std::cout	<< "Float constructor called\n";
-	_fixedPointNbValue = static_cast<int>(roundf(floatToConvert * (1 << _nbFractionalBits)));
+	_fixedPointNbValue = roundf(floatToConvert * (1 << _nbFractionalBits));
 }
 
 Fixed::~Fixed()
@@ -82,7 +82,7 @@ void	Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	return (static_cast<float>(this->_fixedPointNbValue) / (1 << Fixed::_nbFractionalBits));
+	return (this->_fixedPointNbValue) / static_cast<float>(1 << _nbFractionalBits);
 }
 
 int		Fixed::toInt(void) const

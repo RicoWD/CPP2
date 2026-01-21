@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ep <ep@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: erpascua <erpascua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:58:11 by erpascua          #+#    #+#             */
-/*   Updated: 2026/01/20 03:05:23 by ep               ###   ########.fr       */
+/*   Updated: 2026/01/21 15:02:02 by erpascua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ Fixed::Fixed(const int intToConvert)
 Fixed::Fixed(const float floatToConvert)
 {
 	// std::cout	<< "Float constructor called\n";
-	_fixedPointNbValue = static_cast<int>(roundf(floatToConvert * (1 << _nbFractionalBits)));
+	_fixedPointNbValue = roundf(floatToConvert * (1 << _nbFractionalBits));
 }
 
 Fixed::~Fixed()
@@ -81,7 +81,7 @@ void	Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	return (static_cast<float>(this->_fixedPointNbValue) / (1 << Fixed::_nbFractionalBits));
+	return ((this->_fixedPointNbValue) / static_cast<float>(1 << Fixed::_nbFractionalBits));
 }
 
 int		Fixed::toInt(void) const
